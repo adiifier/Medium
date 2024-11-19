@@ -12,7 +12,21 @@ export const userRouter = new Hono<{
   };
 }>();
 
+userRouter.get("/getusers", async (c) => {
+  const prisma = new PrismaClient({
+    datasourceUrl: c.env.DATABASE_URL,
+  }).$extends(withAccelerate());
+  const users = await prisma.user.findMany({
+    select: {
+      id: true,
+    },
+  });
+
+  return c.json(users);
+});
+
 userRouter.post("/signup", async (c) => {
+  console.log("Signup route hit");
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate());
@@ -33,6 +47,7 @@ userRouter.post("/signup", async (c) => {
 
   const user = await prisma.user.create({
     data: {
+      name: body.name,
       email: body.email,
       password: body.password,
     },
