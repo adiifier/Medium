@@ -2,7 +2,7 @@ import { Blog } from "../hooks";
 import { AppBar } from "./Appbar";
 import { Avatar } from "./Blog";
 
-export const FullBlog = ({ blog }: { blog: Blog }) => {
+export const FullBlog = ({ blog }: any) => {
   return (
     <div>
       <AppBar name={blog.author.name || "Anonymous"}></AppBar>

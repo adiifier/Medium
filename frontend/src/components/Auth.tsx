@@ -1,5 +1,5 @@
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import { SignupInput } from "@adiifier/medium-common";
+import { Link, useNavigate } from "react-router-dom";
+
 import { useState } from "react";
 import { InputBox } from "./Inputbox";
 import axios from "axios";

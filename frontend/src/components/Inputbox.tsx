@@ -1,4 +1,4 @@
-import { ChangeEvent, InputHTMLAttributes } from "react";
+import { ChangeEvent } from "react";
 
 interface Labelinputchange {
   label: string;

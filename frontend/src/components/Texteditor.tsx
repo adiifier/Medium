@@ -1,5 +1,4 @@
 export const Texteditor = ({
-  content,
   SetContent,
 }: {
   content: string;

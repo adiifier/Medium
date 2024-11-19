@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Avatar } from "./Blog";
-import { Blog } from "../hooks";
+
 import axios from "axios";
 import { BACKEND_URL } from "../config";
 
