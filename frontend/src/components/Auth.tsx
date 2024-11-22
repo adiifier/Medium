@@ -17,7 +17,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
   async function sendRequest() {
     try {
       const response = await axios.post(
-        `${BACKEND_URL}/api/v1/user/${type === "signup" ? "" : "signin"}`,
+        `${BACKEND_URL}/api/v1/user/${type === "signup" ? "signup" : "signin"}`,
         postInputs,
         {
           headers: {
@@ -50,7 +50,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
                 : "Already have an account"}
               <Link
                 className="pl-2 underline"
-                to={type === "signin" ? "/signup" : "/signin"}
+                to={type === "signin" ? "/" : "/signin"}
               >
                 {type === "signin" ? "Sign up" : "Sign in"}
               </Link>
